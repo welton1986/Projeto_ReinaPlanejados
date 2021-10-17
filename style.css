@@ -1,0 +1,641 @@
+/*========= RESET* ========================*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+}
+
+
+
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+/*========= VARIABLES ========================*/
+
+/* Para usar o rem , voçê divide o valor em pixel por 16 */
+:root {
+    --header-height: 4.5rem;
+
+    /* colors */
+    --hue: 159;
+    /* HSL color mode */
+    --base-color: hsl(var(--hue) 36% 57%);
+    --base-color-second: hsl(var(--hue) 65% 88%);
+    --base-color-alt: hsl(var(--hue) 57% 53%);
+    --title-color: hsl(var(--hue) 41% 10%);
+    --text-color: hsl(0 0% 46%);
+    --text-color-light: hsl(0 0% 98%);
+    --body-color: hsl(0 0% 98%);
+
+    /*FONTS*/
+
+    --title-font-size: 1.85rem;
+    --subtitle-font-size: 1rem;
+
+    --title-font: 'Poppins', sans-serif;
+    --body-font: 'DM Sans', sans-serif;
+    
+
+}
+
+
+
+
+/*========= BASE ========================*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font: 400 1rem var(--body-font);
+    color: var(--text-color);
+    background: var(--body-color);
+    -webkit-font-smoothing: antialiased; /* Deixa a fonte mais fina*/
+}
+
+.title {
+    font: 700 var(--title-font-size) var(--title-font);
+    color: var(--title-color);
+    -webkit-font-smoothing: auto;
+}
+
+.button {
+    background-color: var(--base-color) ;
+    color: var(--text-color-light);
+    height: 3.5rem;
+    display: inline-flex;  /*Ele mantem o tamanho dos itens dentro e fica flexivel para movimentar o texto. */
+    align-items: center;
+    padding: 0 2rem; /* em cima zerado e nas laterais 2rem*/
+    border-radius: 0.25rem;
+    font: 500 1rem var(--body-font);
+    transition: background-color 0.3s;
+
+}
+
+.button:hover {
+    background-color: var(--base-color-alt);
+}
+
+.divider-1 {
+    height: 1px;
+    background: linear-gradient(270deg, 
+    hsla(var(--hue),36%, 57%, 1) ,
+    hsla(var(--hue),65%, 88%, 0.34)
+    ) ;
+}
+
+.divider-2 {
+    height: 1px;
+    background: linear-gradient(270deg, 
+    hsla(var(--hue),65%, 88%, 0.34),
+    hsla(var(--hue),36%, 57%, 1) 
+    ) ;
+}
+
+
+
+
+/*========= LAYOUT ========================*/
+
+.container {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.section {
+    padding: 5rem 0 ;
+}
+
+
+.section .title {
+    margin-bottom: 1rem;
+}
+
+.section .subtitle {
+    font-size: var(--subtitle-font-size);
+}
+
+.section header {
+    margin-bottom: 4rem;
+}
+
+.section header strong {
+    color: var(--base-color);
+}
+
+
+#header {
+    border-bottom: 1px solid #E4E4E4 ;
+    margin-bottom: 2rem;
+    display: flex;
+
+    width: 100%;
+    position: fixed;  /* Parao header ficar fixo em cima na pagina*/
+    top: 0;
+    left: 0;
+    z-index: 100;  /* Serve para jogar o header pra cima do conteudo*/
+    background-color: var(--body-color);  
+}
+
+#header.scroll {
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
+}
+
+main {
+    margin-top: var(--header-height) ;
+}
+
+
+
+/*========= LOGO ========================*/
+
+.logo{
+    font: 700 1.31rem var(--title-font);
+    color: #534f4f;
+
+}
+
+
+
+.logo span{
+    color: var(--base-color);
+}
+
+
+
+
+/*========= NAVIGATION ========================*/
+
+nav {
+    width: 100%;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+nav ul li  {
+    text-align: center;
+}
+
+nav ul li a {
+    transition: color 0.2s;
+    position: relative;
+}
+
+nav ul li a:hover{
+    color: var(--base-color);
+}
+
+nav ul li a:hover::after { /* ele vai mudar so apos de estar com mouse em cima do conteudo*/
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: var(--base-color);
+
+    position: absolute;
+    left: 0;
+    bottom: -1.5rem;
+
+    transition: width 0.2s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav .menu {
+    /*display: none;  tive que tirar para que funcionasse o atraso ao decer o menu*/
+    opacity: 0;
+    visibility: hidden;  /*serve para esconder o menu*/
+    top: -20rem;
+    transition: 0.2s;
+}
+
+nav .menu ul  {
+    display: none;
+}
+
+
+
+/*========= MOSTAR MENU ========================*/
+nav.show .menu {
+   opacity: 1;
+   visibility: visible; 
+
+   background: var(--body-color);
+   height: 100vh;
+   width: 100%; /* Modifiquei para porcentagem para alinhar em toda a largura da tela*/
+
+   position: fixed; /*deixando o menu ocupar todatela*/
+   top: 0;
+   left: 0;
+
+   display: grid;
+   place-content: center;
+}
+
+nav.show .menu ul{
+    display: grid;
+}
+
+
+
+nav.show ul.grid {
+    gap:4rem;
+}
+
+/* toggle menu*/
+
+.toggle {
+    color: var(--base-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+nav .icon-close {
+    visibility: hidden;
+    opacity: 0;
+
+    position: absolute;
+    top: -1.5rem;
+    right: 1.5rem;
+    transition: 0.2s;
+}
+
+nav.show div.icon-close {
+    visibility: visible;
+    opacity: 1;
+    top: 1.5rem;
+    
+}
+
+
+
+/*========= HOME ========================*/
+
+#home {
+    overflow: hidden; /* Esse parametro serve para tirar a rolagem e deixar o header com a imagem no limite e não transbordar para fora */
+}
+
+#home .container{
+    margin: 0;
+}
+
+#home .image {
+    position: relative;
+}
+
+#home .image::before{  /* Cria um elemento junto a div */
+    content: "" ;
+    height: 100%; /* Altura e largura com a mesma dimensão da div image*/
+    width: 100%;
+    background: var(--base-color-second);
+    position: absolute;
+    top: -16.8%; /* deslocamento negativo no top*/
+    left: 16.7%;/* deslocamento a esquerda*/
+    z-index: 0;
+
+
+}
+
+#home .image img {
+    position: relative;  /* Consigo mexer no espaço da imagem*/
+    right: 2.93rem;
+}
+
+
+
+#home .image img,
+#home .image::before {
+    border-radius: 0.25rem;
+}
+
+#home .text {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    text-align: center;
+}
+
+#home .text h1 {
+    margin-bottom: 1rem;
+}
+
+#home .text p {
+    margin-bottom: 2rem;
+    
+}
+
+
+/*========= ABOUT ========================*/
+
+#about {
+    background: #FFF;
+
+}
+
+#about {
+    overflow: hidden; /* Esse parametro serve para tirar a rolagem e deixar o header com a imagem no limite e não transbordar para fora */
+}
+
+#about .container{
+    margin: 0;
+}
+
+#about .image {
+    position: relative;
+}
+
+#about .image::before{  /* Cria um elemento junto a div */
+    content: "" ;
+    height: 100%; /* Altura e largura com a mesma dimensão da div image*/
+    width: 100%;
+    background: var(--base-color-second);
+    position: absolute;
+    top: -8.3%; /* deslocamento negativo no top*/
+    left: -33%;/* deslocamento a esquerda*/
+    z-index: 0;
+
+
+}
+
+#about .image img {
+    position: relative;  /* Consigo mexer no espaço da imagem*/
+   
+}
+
+
+
+#about .image img,
+#about .image::before {
+    border-radius: 0.25rem;
+}
+
+#about .text {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    
+}
+
+
+/*========= SERVICES ========================*/
+
+.cards.grid {
+    gap: 1.5rem;
+}
+
+.card {
+    padding: 3.625rem 2rem; /*cima/baixo  e  laterais*/
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+    border-bottom: 0.25rem solid var(--base-color);
+    border-radius: 0.25rem 0.25rem 0 0; /*borda em cima direita e esquerda e em baixo nenhuma borda*/
+    text-align: center;
+}
+
+.card i {
+    display: block;
+    margin-bottom: 1.5rem;
+    font-size: 5rem;
+    color: var(--base-color);
+}
+
+.card title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+
+/*========= TESTIMONIALS ========================*/
+
+#testimonials {
+    background: #FFF;
+}
+
+#testimonials .container {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#testimonials header {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    margin-bottom: 0;
+  }
+
+#testimonials blockquote {
+    padding: 2rem;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 0.25rem;
+}
+
+#testimonials blockquote p {
+    position: relative;
+    text-indent: 1.875rem;
+    margin-bottom: 1.5rem;
+    color: var(--title-color);
+}
+
+#testimonials blockquote p span {
+    font: 700 2.5rem serif;
+    position: absolute;
+    top: -0.375rem;
+    left: -1.875rem;
+    color: var(--base-color);
+
+
+}
+
+#testimonials cite {
+    display: flex;
+    align-items: center;
+    font-style: normal;
+}
+
+#testimonials cite img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;  /*Esta encaixando a imagem certinha dentro da tag img*/
+    clip-path: circle(); /* Deixa a imagem ja com circulo*/
+    margin-right:0.5rem ;
+}
+
+
+/* swiper */
+.swiper-slide {
+    height: auto;
+    width: auto;
+    padding: 4rem 1rem;
+  }
+  
+  .swiper-pagination {
+    width: 0.75rem;
+    height: 1rem;  /* Almentei a altura para aparecer toda a bolinha do pagination*/
+    position:relative; /*Deixei comorelativo para trazer para o lugar certo os icones*/
+    overflow-y:hidden; /* coloquei essa propriedade para anular a barra vertical no pagination*/
+    
+    
+  }
+  
+  .swiper-pagination-bullet-active {
+    background: var(--base-color);
+  }
+
+
+  
+/* Contact */
+
+#contact .grid {
+    gap: 4rem;
+}
+
+#contact .text p {
+    margin-bottom: 2rem;
+}
+
+#contact .button i,
+#contact ul li i {
+    font-size: 1.5rem;
+    margin-right: 0.625rem;
+}
+
+#contact ul.grid {
+    gap: 2rem;
+}
+
+#contact ul li {
+    display: flex;
+    align-items: center;
+}
+
+#contact ul li i {
+    color: var(--base-color);
+}
+
+/* footer */
+
+footer {
+    background-color: var(--base-color);
+}
+
+footer .logo {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+footer .brand p {
+    color: var(--text-color-light);
+    margin-bottom: 0.75rem;
+}
+
+footer i {
+    font-size: 1.5rem;
+    color: var(--text-color-light);
+}
+
+footer .social {   /* Coloquei essa linha de codigo para ajustar a altura , para que os icones movesse com efeito*/
+    display: flex;
+    align-items:flex-end;
+    height: 40px;
+}
+
+footer .social a {
+    transition: 0.3s; /*Precisa da transição para que faça o efeito no icone*/
+    display: inline-block;
+}
+
+footer .social a:hover {
+    transform: translateY(-8px);
+}
+
+/*  back-to-top*/
+
+.back-to-top {
+    background-color: var(--base-color);
+    color: var(--text-color-light);
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+
+    padding: 0.5rem;
+    clip-path: circle();
+
+    font-size: 1.5rem;
+    line-height: 0;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    transform: translateY(100%); /*Usado para que o botao suba suave*/
+
+}
+
+.back-to-top.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0%); /*usado para que o botão suba suave*/
+}
+
+
+/* Responsivo*/
+
+@media (min-width:1200px) {
+   
+
+
+   
+}
+
+
+
+
+
+@media (min-width:992px) {
+    :root {
+        --title-font-size: 2.25rem;
+        --subtitle-font-size:1.125rem;
+
+    }
+}
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
