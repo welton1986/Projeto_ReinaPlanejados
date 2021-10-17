@@ -221,7 +221,7 @@ nav .menu ul  {
 }
 
 nav ul li a:hover {
-    color:var(--base-color);
+    color: var(--base-color);
 }
 
 
@@ -418,6 +418,7 @@ nav.show div.icon-close {
 
 #testimonials {
     background: #FFF;
+    
 }
 
 #testimonials .container {
@@ -482,9 +483,9 @@ nav.show div.icon-close {
     height: 1rem;  /* Almentei a altura para aparecer toda a bolinha do pagination*/
     position:relative; /*Deixei comorelativo para trazer para o lugar certo os icones*/
     overflow-y:hidden; /* coloquei essa propriedade para anular a barra vertical no pagination*/
-    
-    
+
   }
+
   
   .swiper-pagination-bullet-active {
     background: var(--base-color);
