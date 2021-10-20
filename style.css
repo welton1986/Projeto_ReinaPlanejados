@@ -694,7 +694,7 @@ footer .social a:hover {
         align-items: center;
         width: 90%;
         height:31.25rem ;
-        background-color: var(--base-color);
+        background-color: rgba(0, 128, 0, 0.3);
         margin-bottom:1.25rem;
         border-radius: 10px 0 10px 0px;
     }
@@ -712,7 +712,7 @@ footer .social a:hover {
         align-items: center;
         width: 90%;
         height: 31.25rem;
-        background-color: var(--base-color);
+        background-color: rgba(0, 128, 0, 0.3);
         border-radius: 10px 0 10px 0px;
     }
 
