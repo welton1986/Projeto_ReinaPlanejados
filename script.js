@@ -79,7 +79,7 @@ scrollReveal.reveal(
     `#home .image, #home .text,
     #about .image, #about .text,
     #services header, #services .card,
-    #testimonials header, #testimonials .testmonials,
+    #works  , 
     #contact .text, #contact .links 
     
     `, 
