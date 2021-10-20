@@ -419,7 +419,8 @@ nav.show div.icon-close {
     width: 98%;
     height: 25rem;
     background-color: var(--base-color);
-    margin-bottom:1.25rem;
+    margin-top: 3.75rem;
+    margin-bottom:3.75rem;
     border-radius: 10px 0 10px 0px;
 }
 
@@ -436,6 +437,7 @@ nav.show div.icon-close {
     width: 98%;
     height: 25rem;
     background-color: var(--base-color);
+    margin-top: 3.75rem;
     border-radius: 10px 0 10px 0px;
 }
 
@@ -692,7 +694,6 @@ footer .social a:hover {
         align-items: center;
         width: 90%;
         height:31.25rem ;
-        
         background-color: var(--base-color);
         margin-bottom:1.25rem;
         border-radius: 10px 0 10px 0px;
