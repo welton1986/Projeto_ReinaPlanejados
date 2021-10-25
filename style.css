@@ -418,7 +418,7 @@ nav.show div.icon-close {
     align-items: center;
     width: 98%;
     height: 25rem;
-    background-color: rgba(0, 128, 0, 0.3);
+    
     margin-top: 3.75rem;
     margin-bottom:4.75rem;
     border-radius: 10px 0 10px 0px;
@@ -436,7 +436,7 @@ nav.show div.icon-close {
     align-items: center;
     width: 98%;
     height: 25rem;
-    background-color: rgba(0, 128, 0, 0.3);
+    
     margin-top: 3.75rem;
     border-radius: 10px 0 10px 0px;
 }
