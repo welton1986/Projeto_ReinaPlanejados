@@ -682,6 +682,11 @@ footer .social a:hover {
 
 @media (max-width:600px) {
 
+    #works {
+        margin: 0;
+        padding: 0;
+    }
+
     #works .title.titulo {
     
         text-align: center;
@@ -692,16 +697,20 @@ footer .social a:hover {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 90%;
-        height:31.25rem ;
-        background-color: rgba(0, 128, 0, 0.3);
+        width: 100%;
+        height:28.75rem ;
         margin-bottom:1.25rem;
-        border-radius: 10px 0 10px 0px;
+        background-color: #FFF;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        padding: 0;
+        overflow-x: hidden;
+        
     }
 
     .work1 img {
-        width: 80%;
-        
+        width: 100%;
+        height: 40%;
         margin: 0.625rem;
     }
 
@@ -710,14 +719,17 @@ footer .social a:hover {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 90%;
-        height: 31.25rem;
-        background-color: rgba(0, 128, 0, 0.3);
-        border-radius: 10px 0 10px 0px;
+        width: 100%;
+        height: 28.75rem;
+        background-color: #FFF;
+        margin-top: 0px;
+        padding: 0;
+        overflow-x: hidden;
+        
     }
 
     .work2 img {
-        width: 80%;
+        width: 100%;
         height: 40%;
         margin: 0.625rem;
     }
