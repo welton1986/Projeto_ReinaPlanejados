@@ -32,7 +32,7 @@ img {
     --header-height: 4.5rem;
 
     /* colors */
-    --hue: 159;
+    --hue: 300;
     /* HSL color mode */
     --base-color: hsl(var(--hue) 36% 57%);
     --base-color-second: hsl(var(--hue) 65% 88%);
@@ -161,6 +161,7 @@ body {
 
 #header.scroll {
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
+   
 }
 
 main {
@@ -284,11 +285,16 @@ nav.show div.icon-close {
 
 #home {
     overflow: hidden; /* Esse parametro serve para tirar a rolagem e deixar o header com a imagem no limite e não transbordar para fora */
+    background-color: #b688b6;
+
 }
+
+
 
 #home .container{
     margin: 0;
 }
+
 
 #home .image {
     display: flex;
@@ -299,7 +305,7 @@ nav.show div.icon-close {
 
 #home img {
     width: 100%;
-    height: 80%;
+    height: 100%;
 }
 
 
@@ -326,6 +332,7 @@ nav.show div.icon-close {
 
 #home .text p {
     margin-bottom: 2rem;
+    color: #FFF;
     
 }
 
@@ -367,8 +374,20 @@ nav.show div.icon-close {
     
 }
 
+#about .text strong {
+    color: var(--base-color);
+}
+
 
 /*========= SERVICES ========================*/
+
+#sabores {
+    background-color: #b688b6;
+}
+
+#sabores p {
+    color: #FFF;
+}
 
 .cards.grid {
     gap: 1.5rem;
@@ -397,58 +416,6 @@ nav.show div.icon-close {
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
 }
-
-
-/*========= TESTIMONIALS ========================*/
-
-#works {
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    background: #FFF;
-    width: 100%;
-
-    
-}
-
-.work1{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 98%;
-    height: 25rem;
-    
-    margin-top: 3.75rem;
-    margin-bottom:4.75rem;
-    border-radius: 10px 0 10px 0px;
-}
-
-.work1 img {
-    width: 40%;
-    height: 80%;
-    margin: 0.625rem;
-}
-
-.work2 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 98%;
-    height: 25rem;
-    
-    margin-top: 3.75rem;
-    border-radius: 10px 0 10px 0px;
-}
-
-.work2 img {
-    width: 40%;
-    height: 80%;
-    margin: 0.625rem;
-}
-
-
-
 
 
 /* swiper */
@@ -481,6 +448,10 @@ nav.show div.icon-close {
 
 #contact .text p {
     margin-bottom: 2rem;
+}
+
+#contact .text strong {
+    color: var(--base-color);
 }
 
 #contact .button i,
@@ -540,6 +511,12 @@ footer .social a {
 
 footer .social a:hover {
     transform: translateY(-8px);
+}
+
+footer .created {
+    text-align: center;
+    margin-top: 40px;
+    
 }
 
 /*  back-to-top*/
@@ -655,11 +632,9 @@ footer .social a:hover {
     #contact .container {
         grid-auto-flow: column;
         align-items: center;
+    
     }
 
-    #contact .text {
-        max-width: 25rem;
-    }
 
     footer.section {
         padding: 3.75rem 0;
@@ -674,6 +649,8 @@ footer .social a:hover {
     footer .logo {
         font-size: 2.25rem;
     }
+
+
 }
 
 
@@ -682,57 +659,20 @@ footer .social a:hover {
 
 @media (max-width:600px) {
 
-    #works {
-        margin: 0;
-        padding: 0;
-    }
-
-    #works .title.titulo {
     
+
+    #contact .text {
         text-align: center;
     }
 
-    .work1{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height:28.75rem ;
-        margin-bottom:1.25rem;
-        background-color: #FFF;
-        margin-top: 0px;
-        margin-bottom: 20px;
-        padding: 0;
-        overflow-x: hidden;
-        
+    #services .grid {
+        text-align: center;
     }
 
-    .work1 img {
-        width: 100%;
-        height: 40%;
-        margin: 0.625rem;
+    #about .text {
+        text-align: center;
     }
 
-    .work2 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 28.75rem;
-        background-color: #FFF;
-        margin-top: 0px;
-        padding: 0;
-        overflow-x: hidden;
-        
-    }
-
-    .work2 img {
-        width: 100%;
-        height: 40%;
-        margin: 0.625rem;
-    }
 }
 
 
